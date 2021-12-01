@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [MainController::class,'ActionOnHome']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [MainController::class,'ActionOnAbout']);
+
+Route::get('/review', [MainController::class,'ActionOnReview']);
+
+Route::post('/review/check', [MainController::class,'ActionOnReviewCheck']);
+
