@@ -18,7 +18,7 @@ Route::get('/', [MainController::class,'ActionOnHome']);
 
 Route::get('/about', [MainController::class,'ActionOnAbout']);
 
-Route::get('/review', [MainController::class,'ActionOnReview']);
+Route::get('/review', [MainController::class,'ActionOnReview'])->name('review');
 
 Route::post('/review/check', [MainController::class,'ActionOnReviewCheck']);
 
